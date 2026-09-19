@@ -9,7 +9,8 @@
   }
 
   body {
-    @apply bg-surface-canvas text-petrol font-inter antialiased;
+    @apply bg-surface-canvas text-petrol font-inter antialiased overflow-x-hidden;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -20,5 +21,20 @@
 @layer components {
   .glass-panel {
     @apply bg-surface-base/90 backdrop-blur-md border border-border-subtle shadow-level-1;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Mobile specific fixes */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important; /* Prevents auto-zoom on iOS */
   }
 }
