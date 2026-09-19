@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bibliothèque Universitaire d'Épreuves &amp; Partiels - EDUMENTORYA ONE</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#3f484a",
+            "surface-container": "#e2f0f6",
+            "on-secondary-container": "#7d3f79",
+            "on-secondary-fixed-variant": "#6b3068",
+            "surface-container-highest": "#d7e5ea",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#e5f3f9",
+            "outline-variant": "#bec8ca",
+            "error": "#ba1a1a",
+            "on-surface": "#111d22",
+            "primary-container": "#015f67",
+            "surface-container-low": "#e8f6fc",
+            "surface-variant": "#d7e5ea",
+            "surface-container-high": "#ddeaf0",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#380039",
+            "on-primary-container": "#8fd6df",
+            "inverse-primary": "#8bd2db",
+            "on-tertiary-fixed-variant": "#164c60",
+            "on-primary-fixed": "#001f23",
+            "secondary": "#864882",
+            "tertiary-container": "#285b6f",
+            "tertiary-fixed-dim": "#9dcee5",
+            "primary-fixed": "#a7eef7",
+            "surface-bright": "#f2fbff",
+            "on-tertiary-container": "#a0d1e9",
+            "on-tertiary-fixed": "#001f2a",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#8bd2db",
+            "tertiary-fixed": "#bce9ff",
+            "outline": "#6f797a",
+            "tertiary": "#074457",
+            "secondary-fixed-dim": "#f9aef0",
+            "surface": "#f2fbff",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#004f56",
+            "secondary-fixed": "#ffd7f6",
+            "inverse-surface": "#263237",
+            "on-secondary": "#ffffff",
+            "primary": "#00464c",
+            "petrol": "#024154",
+            "background": "#f2fbff",
+            "surface-dim": "#cfdce2",
+            "secondary-container": "#ffb3f5",
+            "surface-tint": "#166870",
+            "on-background": "#111d22"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-desktop": "1.5rem",
+            "margin-desktop": "3rem",
+            "space-md": "1rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "space-3xl": "4rem",
+            "margin-tablet": "2rem",
+            "space-xxs": "0.25rem",
+            "margin-mobile": "1rem",
+            "space-sm": "0.75rem",
+            "space-xs": "0.5rem",
+            "space-2xl": "3rem",
+            "space-xl": "2rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Poppins"],
+            "headline-lg": ["Poppins"],
+            "title-lg": ["Poppins"],
+            "body-md": ["Inter"],
+            "label-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "title-md": ["Inter"],
+            "headline-lg-mobile": ["Poppins"],
+            "headline-md": ["Poppins"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Poppins"],
+            "display-lg-mobile": ["Poppins"]
+          },
+          "fontSize": {
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "title-lg": ["18px", {"lineHeight": "26px", "fontWeight": "500"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .glass-pill {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary">
+<!-- TopAppBar Component (Academic Archive Header) -->
+<header class="fixed top-0 left-0 w-full z-40 flex justify-between items-center px-gutter-mobile h-14 bg-surface-container-lowest border-b border-outline-variant/50 shadow-xs">
+<div class="flex items-center space-x-2.5">
+<img alt="Edumentorya crest logo" class="w-8 h-8 rounded-full object-contain bg-surface-container-lowest p-0.5 border border-outline-variant/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgglHr11CeS1bywhqSJzivRtK8NnUh4pWAE9bC8HSqqMov-Sh8wqWaNRQwuKKTSjpajmIveH1u0glSPxnypd3XsdrpPxIbWCr-C-bWmAvBaJD2LyaX8f1HicRkgeknv6EyClylLamWdozhI7OWPYbjSTC7GjRVb1FVIRckwsnx9FXCysE4WPgKFhtr9UE36zxUKVxHFOy_tJ1eVIz1zZjjQOlt1OQzrWSfCr4K7V87QBP7uYAxrtuWhgvdXiGzKQ09yh4"/>
+<div>
+<span class="text-title-md font-headline-sm font-bold text-primary tracking-tight">EDUMENTORYA</span>
+<span class="hidden sm:inline-block text-[11px] font-label-sm text-outline uppercase tracking-wider pl-2 border-l border-outline-variant/60 ml-2">Bibliothèque Universitaire</span>
+</div>
+</div>
+<!-- Desktop Navigation items hidden on mobile -->
+<nav class="hidden md:flex items-center space-x-6">
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">Portail</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">Tuteur Universitaire</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">Évaluation</a>
+<a class="text-primary font-semibold font-label-md text-label-md transition-colors border-b-2 border-primary py-4" href="#">Archives &amp; Annales</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">Adhésion</a>
+</nav>
+<div class="flex items-center space-x-2">
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors" title="Espace Étudiant / Enseignant">
+<span class="material-symbols-outlined text-xl">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Container with bottom clearance for BottomNavBar and top clearance for Header -->
+<main class="flex-grow pt-16 pb-28 px-4 sm:px-6 max-w-5xl mx-auto w-full">
+<!-- Page Title & Micro Context -->
+<section class="mt-3 mb-5">
+<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 border-b border-outline-variant/30 pb-3">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-semibold tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">account_balance</span>
+        Répertoire Universitaire &amp; Grandes Écoles
+      </span>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mt-0.5">Bibliothèque Universitaire d'Épreuves &amp; Partiels</h1>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Archives d'Examens &amp; Concours Universitaires (Bénin &amp; Région)</p>
+</div>
+</section>
+<!-- Search Bar -->
+<section class="mb-5">
+<div class="relative w-full">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-xl">search</span>
+</span>
+<input class="w-full h-11 pl-11 pr-4 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-petrol focus:ring-1 focus:ring-petrol transition-all shadow-xs" placeholder="Rechercher par matière, unité d'enseignement (UE), établissement (UAC, EPAC, ENEAM)..." type="search"/>
+</div>
+</section>
+<!-- Interactive Filters & Academic Taxonomy -->
+<section class="mb-6 space-y-3">
+<!-- Cycle Filters -->
+<div class="flex items-center space-x-1.5 overflow-x-auto custom-scrollbar pb-1">
+<span class="text-xs font-semibold text-outline shrink-0 pr-1 flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">school</span> Cycle :
+  </span>
+<button class="shrink-0 px-3 py-1 rounded-md font-label-md text-label-md bg-[#024154] text-white font-medium border border-[#024154] transition-all">Tous</button>
+<button class="shrink-0 px-3 py-1 rounded-md font-label-md text-label-md bg-surface-container-lowest border border-outline-variant text-on-surface hover:bg-surface-container transition-all">Licence 1</button>
+<button class="shrink-0 px-3 py-1 rounded-md font-label-md text-label-md bg-surface-container-lowest border border-outline-variant text-on-surface hover:bg-surface-container transition-all">Licence 2</button>
+<button class="shrink-0 px-3 py-1 rounded-md font-label-md text-label-md bg-surface-container-lowest border border-outline-variant text-on-surface hover:bg-surface-container transition-all">Licence 3</button>
+<button class="shrink-0 px-3 py-1 rounded-md font-label-md text-label-md bg-surface-container-lowest border border-outline-variant text-on-surface hover:bg-surface-container transition-all">Concours EPAC / ENEAM</button>
+</div>
+<!-- Filières Pills + Year Selector Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pt-0.5">
+<div class="flex items-center space-x-1.5 overflow-x-auto custom-scrollbar pb-1 flex-1">
+<span class="text-xs font-semibold text-outline shrink-0 pr-1 flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">category</span> Filière :
+    </span>
+<button class="shrink-0 px-2.5 py-1 rounded-md font-label-sm text-label-sm bg-[#024154] text-white font-medium border border-[#024154]">Mathématiques</button>
+<button class="shrink-0 px-2.5 py-1 rounded-md font-label-sm text-label-sm bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors">Informatique</button>
+<button class="shrink-0 px-2.5 py-1 rounded-md font-label-sm text-label-sm bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors">Sciences Physiques</button>
+<button class="shrink-0 px-2.5 py-1 rounded-md font-label-sm text-label-sm bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors">Droit &amp; Économie</button>
+<button class="shrink-0 px-2.5 py-1 rounded-md font-label-sm text-label-sm bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors">Génie</button>
+</div>
+<div class="flex items-center self-start sm:self-auto shrink-0 space-x-1.5 bg-surface-container-lowest border border-outline-variant px-2.5 py-1 rounded-md shadow-xs">
+<span class="material-symbols-outlined text-sm text-outline">calendar_today</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Session :</span>
+<select class="bg-transparent border-0 font-label-md text-label-md text-primary font-medium p-0 pr-4 focus:ring-0 cursor-pointer">
+<option selected="" value="2024">Session 2024 / 2023</option>
+<option value="2023">Session 2023 / 2022</option>
+<option value="2022">Session 2022 / 2021</option>
+<option value="archives">Archives antérieures (2018–2021)</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Structured Academic Exam Archives Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<!-- Card 1: Partiel L2 UAC - Algèbre Bilinéaire -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 sm:p-5 flex flex-col justify-between shadow-xs hover:border-primary/40 transition-colors relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-outline-variant/60 font-label-sm text-label-sm bg-surface-container-low text-primary font-medium">
+<span class="material-symbols-outlined text-xs">school</span>
+        UAC • Faculté des Sciences &amp; Techniques (FAST)
+      </span>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-xs">schedule</span> 3h • Partiel S3
+      </span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold group-hover:text-primary transition-colors">
+      Partiel L2 UAC - Algèbre Bilinéaire &amp; Réduction des Endomorphismes (Session Normale)
+    </h2>
+<p class="mt-1.5 font-body-sm text-body-sm text-on-surface-variant">
+      Épreuve officielle structurée : 3 Exercices d'application (diagonalisation, formes quadratiques, orthonormalisation de Gram-Schmidt) + 1 Problème de synthèse sur les matrices symétriques réelles.
+    </p>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center space-x-1.5 text-primary">
+<span class="material-symbols-outlined text-sm">lock_open_right</span>
+<span class="font-label-md text-label-md font-medium">Accès Libre (Énoncé public)</span>
+</div>
+<button class="px-3.5 py-1.5 bg-surface-container text-primary hover:bg-primary hover:text-on-primary border border-primary/20 rounded-lg font-label-md text-label-md font-medium transition-all shadow-xs flex items-center space-x-1">
+<span>Consulter l'archive</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Concours d'entrée EPAC 2024 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 sm:p-5 flex flex-col justify-between shadow-xs hover:border-primary/40 transition-colors relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-[#024154]"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-outline-variant/60 font-label-sm text-label-sm bg-surface-container-low text-primary font-medium">
+<span class="material-symbols-outlined text-xs">verified</span>
+        EPAC Bénin • Concours National d'Entrée
+      </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded border border-outline-variant font-label-sm text-label-sm text-on-surface font-semibold bg-surface-container-low">
+        Frais d'archive : 500 FCFA
+      </span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold group-hover:text-primary transition-colors">
+      Concours d'entrée EPAC 2024 - Physique &amp; Sciences de l'Ingénieur
+    </h2>
+<p class="mt-1.5 font-body-sm text-body-sm text-on-surface-variant">
+      Épreuve certifiée complète + Corrigé rédigé pas-à-pas avec schémas techniques, bilans thermodynamiques, circuits électriques RLC en régime sinusoïdal et barème officiel du jury.
+    </p>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/40 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-outline">description</span> Archive intégrale avec corrigé annoté
+    </span>
+<button class="w-full sm:w-auto px-3.5 py-1.5 bg-[#024154] hover:bg-primary text-white rounded-lg font-label-md text-label-md font-medium transition-all shadow-xs flex items-center justify-center space-x-1.5">
+<span class="material-symbols-outlined text-sm">download</span>
+<span>Consulter l'épreuve &amp; corrigé (500 FCFA)</span>
+</button>
+</div>
+</article>
+<!-- Card 3: Partiel L2 Informatique - Structures de Données & Arbres AVL -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 sm:p-5 flex flex-col justify-between shadow-xs hover:border-primary/40 transition-colors relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-[#024154]"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-outline-variant/60 font-label-sm text-label-sm bg-surface-container-low text-primary font-medium">
+<span class="material-symbols-outlined text-xs">terminal</span>
+        UAC / IFRI • Institut de Formation &amp; Recherche en Informatique
+      </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded border border-outline-variant font-label-sm text-label-sm text-on-surface font-semibold bg-surface-container-low">
+        500 FCFA • Inclus abonnement
+      </span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold group-hover:text-primary transition-colors">
+      Partiel L2 Informatique - Structures de Données &amp; Arbres AVL (UAC / IFRI)
+    </h2>
+<p class="mt-1.5 font-body-sm text-body-sm text-on-surface-variant">
+      Corrigé d'algorithmique annoté : implémentation en C/C++, rotations simples/doubles AVL, complexité temporelle asymptotique $\mathcal{O}(\log n)$ et gestion dynamique de mémoire.
+    </p>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center space-x-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-primary">fact_check</span>
+<span>Épreuve &amp; solution algorithmique détaillée</span>
+</div>
+<button class="px-3.5 py-1.5 bg-[#024154] text-white hover:bg-primary rounded-lg font-label-md text-label-md font-medium transition-all shadow-xs flex items-center space-x-1">
+<span class="material-symbols-outlined text-sm">lock_open</span>
+<span>Accéder au document</span>
+</button>
+</div>
+</article>
+<!-- Card 4: Économétrie & Séries Temporelles L3 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 sm:p-5 flex flex-col justify-between shadow-xs hover:border-primary/40 transition-colors relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-[#024154]"></div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-outline-variant/60 font-label-sm text-label-sm bg-surface-container-low text-primary font-medium">
+<span class="material-symbols-outlined text-xs">analytics</span>
+        FASEG / ENEAM • Sciences Économiques &amp; Gestion
+      </span>
+<span class="font-label-sm text-label-sm font-medium text-outline flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-xs">layers</span> 3h • Session 2023
+      </span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold group-hover:text-primary transition-colors">
+      Économétrie &amp; Séries Temporelles L3 (FASEG / ENEAM)
+    </h2>
+<p class="mt-1.5 font-body-sm text-body-sm text-on-surface-variant">
+      Partiel de synthèse universitaire : tests de stationnarité (Dickey-Fuller augmenté), modèles autorégressifs ARMA/ARIMA, régression linéaire multivariée et interprétation des sorties logiciels (Stata/R).
+    </p>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center space-x-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="font-semibold text-on-surface">500 FCFA</span>
+<span>ou adhésion annuelle</span>
+</div>
+<div class="flex items-center space-x-2">
+<button class="px-3 py-1.5 border border-outline-variant hover:bg-surface-container rounded-lg font-label-md text-label-md text-primary font-medium transition-colors">
+        Sommaire
+      </button>
+<button class="px-3.5 py-1.5 bg-[#024154] text-white hover:bg-primary rounded-lg font-label-md text-label-md font-medium shadow-xs transition-all flex items-center space-x-1">
+<span class="material-symbols-outlined text-sm">lock_open</span>
+<span>Consulter</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- Institutional Membership Banner -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 sm:p-5 shadow-xs relative">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-start space-x-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0 text-primary border border-outline-variant/50">
+<span class="material-symbols-outlined text-2xl">local_library</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">
+          Accès illimité aux corrigés d'examens universitaires et concours nationaux
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Formule Étudiant à <span class="font-semibold text-primary">1 000 FCFA / mois</span> • Téléchargement de l'ensemble des annales officielles et barèmes rédigés.
+        </p>
+</div>
+</div>
+<button class="w-full sm:w-auto shrink-0 px-5 py-2.5 bg-[#024154] hover:bg-primary text-white rounded-lg font-label-md text-label-md font-semibold shadow-xs transition-all">
+      Activer l'accès Étudiant
+    </button>
+</div>
+</section>
+</main>
+<!-- Sober Academic BottomNavBar Component -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-2 bg-surface-container-lowest border-t border-outline-variant/50 shadow-sm md:hidden">
+<!-- Accueil -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 transition-colors hover:text-primary" href="#">
+<span class="material-symbols-outlined text-xl">home</span>
+<span class="text-[11px] font-label-sm mt-0.5">Portail</span>
+</a>
+<!-- Tuteur IA -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 transition-colors hover:text-primary" href="#">
+<span class="material-symbols-outlined text-xl">school</span>
+<span class="text-[11px] font-label-sm mt-0.5">Tuteur</span>
+</a>
+<!-- Correction -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 transition-colors hover:text-primary" href="#">
+<span class="material-symbols-outlined text-xl">fact_check</span>
+<span class="text-[11px] font-label-sm mt-0.5">Évaluation</span>
+</a>
+<!-- Annales (Active) -->
+<a class="flex flex-col items-center justify-center text-[#024154] px-3 py-1 border-t-2 border-[#024154] font-semibold" href="#">
+<span class="material-symbols-outlined text-xl text-[#024154]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="text-[11px] font-label-sm mt-0.5 text-[#024154]">Archives</span>
+</a>
+<!-- Adhésion / Compte -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 transition-colors hover:text-primary" href="#">
+<span class="material-symbols-outlined text-xl">badge</span>
+<span class="text-[11px] font-label-sm mt-0.5">Adhésion</span>
+</a>
+</nav>
+</body></html>

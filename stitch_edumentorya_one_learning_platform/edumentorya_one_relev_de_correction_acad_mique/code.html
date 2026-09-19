@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EDUMENTORYA ONE - Rapport d'évaluation de TD</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-dim": "#cfdce2",
+          "on-error-container": "#93000a",
+          "surface-container-lowest": "#ffffff",
+          "on-primary": "#ffffff",
+          "surface-tint": "#166870",
+          "tertiary": "#074457",
+          "on-secondary-fixed-variant": "#6b3068",
+          "on-primary-fixed-variant": "#004f56",
+          "surface-container-low": "#e8f6fc",
+          "on-error": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "on-surface-variant": "#3f484a",
+          "primary": "#00464c",
+          "secondary": "#864882",
+          "surface-bright": "#f2fbff",
+          "primary-fixed": "#a7eef7",
+          "on-secondary": "#ffffff",
+          "tertiary-fixed": "#bce9ff",
+          "on-tertiary-fixed-variant": "#164c60",
+          "error": "#ba1a1a",
+          "on-secondary-container": "#7d3f79",
+          "secondary-container": "#ffb3f5",
+          "secondary-fixed-dim": "#f9aef0",
+          "on-tertiary-fixed": "#001f2a",
+          "primary-fixed-dim": "#8bd2db",
+          "secondary-fixed": "#ffd7f6",
+          "surface-container": "#e2f0f6",
+          "on-surface": "#111d22",
+          "outline": "#6f797a",
+          "background": "#f2fbff",
+          "outline-variant": "#bec8ca",
+          "tertiary-fixed-dim": "#9dcee5",
+          "error-container": "#ffdad6",
+          "surface-variant": "#d7e5ea",
+          "surface-container-high": "#ddeaf0",
+          "on-primary-fixed": "#001f23",
+          "tertiary-container": "#285b6f",
+          "inverse-on-surface": "#e5f3f9",
+          "primary-container": "#015f67",
+          "surface": "#f2fbff",
+          "on-secondary-fixed": "#380039",
+          "on-background": "#111d22",
+          "on-primary-container": "#8fd6df",
+          "inverse-surface": "#263237",
+          "on-tertiary-container": "#a0d1e9",
+          "surface-container-highest": "#d7e5ea",
+          "inverse-primary": "#8bd2db"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter-desktop": "1.5rem",
+          "space-3xl": "4rem",
+          "space-xl": "2rem",
+          "space-lg": "1.5rem",
+          "margin-tablet": "2rem",
+          "space-sm": "0.75rem",
+          "margin-desktop": "3rem",
+          "space-xxs": "0.25rem",
+          "gutter-mobile": "1rem",
+          "space-2xl": "3rem",
+          "space-md": "1rem",
+          "space-xs": "0.5rem",
+          "margin-mobile": "1rem"
+        },
+        "fontFamily": {
+          "mono": ["'JetBrains Mono'", "monospace"],
+          "label-sm": ["Inter"],
+          "headline-sm": ["Poppins"],
+          "title-md": ["Inter"],
+          "title-lg": ["Poppins"],
+          "label-md": ["Inter"],
+          "headline-md": ["Poppins"],
+          "body-md": ["Inter"],
+          "body-lg": ["Inter"],
+          "label-lg": ["Inter"],
+          "body-sm": ["Inter"],
+          "display-lg": ["Poppins"],
+          "headline-lg-mobile": ["Poppins"],
+          "headline-lg": ["Poppins"],
+          "display-lg-mobile": ["Poppins"]
+        },
+        "fontSize": {
+          "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+          "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+          "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+          "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "500" }],
+          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+          "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+          "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+          "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+          "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+          "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+          "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+          "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+        }
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .shadow-ambient-teal {
+      box-shadow: 0 4px 20px -2px rgba(1, 95, 103, 0.06), 0 2px 6px -1px rgba(2, 65, 84, 0.03);
+    }
+    .academic-border {
+      border: 1px solid #bec8ca;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-28 md:pb-16">
+<!-- 1. HEADER: Academic Breadcrumb & No Flame Counter -->
+<header class="fixed top-0 left-0 w-full z-40 flex justify-between items-center px-gutter-mobile md:px-margin-desktop h-14 bg-surface-container-lowest border-b border-outline-variant/60 shadow-sm">
+<div class="flex items-center space-x-3">
+<button aria-label="Retour" class="w-9 h-9 rounded-lg flex items-center justify-center text-primary hover:bg-surface-container transition-colors duration-150 active:scale-95 border border-outline-variant/50" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">EDUMENTORYA</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-semibold">ONE</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface-variant leading-tight">
+<span class="font-medium text-primary">Rapport d'évaluation de TD</span>
+<span class="text-outline">•</span>
+<span class="font-mono text-outline">Session #ED-8924</span>
+</div>
+</div>
+</div>
+<!-- Center Destination Context on Desktop -->
+<div class="hidden md:flex items-center space-x-6 text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Accueil</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Tuteur IA</a>
+<a class="text-primary font-semibold flex items-center gap-1 border-b-2 border-primary pb-0.5" href="#">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="article">article</span>
+      Évaluations &amp; Relevés
+    </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Annales</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Abonnement</a>
+</div>
+<!-- Trailing Actions (Flame removed, academic session info & history) -->
+<div class="flex items-center space-x-2">
+<button aria-label="Historique académique" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors border border-outline-variant/50" title="Historique académique" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="history">history</span>
+</button>
+<span class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-label-sm font-mono bg-surface-container text-primary border border-outline-variant/60 font-medium">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="verified_user" style="font-size: 13px;">verified_user</span>
+      IA Certifiée L2
+    </span>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="max-w-4xl mx-auto pt-20 px-gutter-mobile md:px-space-md">
+<!-- 2. SUBJECT METADATA: Licence 2 Sciences Physiques & Génie / TD d'Électrocinétique -->
+<div class="mb-space-md bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant shadow-ambient-teal">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-space-xs border-b border-surface-container-high">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-primary text-on-primary font-semibold uppercase tracking-wider">
+          Licence 2 (L2)
+        </span>
+<span class="px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-surface-container text-primary font-medium border border-outline-variant/50">
+          Sciences Physiques &amp; Génie
+        </span>
+<span class="px-2 py-0.5 rounded text-label-sm font-mono bg-surface-container-low text-on-surface-variant">
+          UE : PHY201 - Électrocinétique
+        </span>
+</div>
+<div class="text-body-sm font-body-sm text-outline flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="event">event</span>
+<span>Aujourd'hui à 16:42 • Inspecteur IA certifié EPAC/UAC</span>
+</div>
+</div>
+<div class="mt-2.5">
+<h1 class="text-title-lg md:text-headline-md font-headline-md text-on-surface tracking-tight">
+        TD d'Électrocinétique &amp; Régimes Transitoires
+      </h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+        Évaluation formelle : Équations différentielles, conventions de fléchage des grandeurs oscillantes &amp; régimes transitoires du second ordre.
+      </p>
+</div>
+</div>
+<!-- 3. DOCUMENT PREVIEW & OCR METADATA -->
+<div class="mb-space-md bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-ambient-teal">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-on-surface uppercase tracking-wider font-semibold">Document Source Analysé</span>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-primary font-semibold bg-surface-container-low px-2 py-0.5 rounded border border-primary/20">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="verified" style="font-size: 13px;">verified</span>
+          Taux de transcription OCR 99.4%
+        </span>
+</div>
+<span class="text-label-sm font-label-sm text-outline font-mono">Format PDF • 1 page manuscrite</span>
+</div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-surface-container-low rounded-lg p-3 border border-surface-container-highest">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-14 rounded bg-surface-container-lowest border border-outline-variant flex items-center justify-center flex-shrink-0 text-primary shadow-xs">
+<span class="material-symbols-outlined text-2xl" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div class="min-w-0">
+<p class="text-label-lg font-label-lg text-on-surface truncate" title="TD2_Electrocinetique_Regimes_Transitoires_L2.pdf">
+            TD2_Electrocinetique_Regimes_Transitoires_L2.pdf
+          </p>
+<div class="flex items-center gap-2 mt-0.5 text-body-sm font-body-sm text-on-surface-variant">
+<span>Circuit RLC série • Échelon de tension</span>
+<span class="text-outline">•</span>
+<span class="text-primary font-medium">Document source analysé avec succès</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-end pt-2 sm:pt-0 border-t sm:border-t-0 border-outline-variant/40">
+<button class="text-label-sm font-label-sm text-primary hover:text-tertiary flex items-center gap-1 px-2.5 py-1.5 rounded bg-surface-container-lowest border border-outline-variant hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-xs" data-icon="visibility">visibility</span>
+<span>Consulter le scan</span>
+</button>
+<button class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary flex items-center gap-1 px-2.5 py-1.5 rounded bg-surface-container-lowest border border-outline-variant hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-xs" data-icon="refresh">refresh</span>
+<span>Remplacer la capture</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 4. OVERALL ASSESSMENT: Official University Grade Transcript Format -->
+<div class="mb-space-lg bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-ambient-teal relative overflow-hidden">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-xs border-b border-surface-container-highest gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="school">school</span>
+<h2 class="text-label-md font-label-md uppercase tracking-wider text-on-surface font-semibold">
+          Relevé de Notes &amp; Évaluation Académique Universitaire
+        </h2>
+</div>
+<span class="font-mono text-label-sm text-outline">Référence Jury : #L2-PHY-8924</span>
+</div>
+<!-- Score & Transcript summary -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md my-space-md items-center">
+<div class="md:col-span-5 flex flex-col justify-center border-b md:border-b-0 md:border-r border-surface-container-high pb-4 md:pb-0 md:pr-4">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider font-semibold">Note Globale d'Examen</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-display-lg-mobile md:text-headline-lg font-headline-lg text-primary tracking-tight font-bold">15,5</span>
+<span class="text-title-lg font-title-lg text-outline font-medium">/ 20</span>
+</div>
+<div class="flex flex-wrap items-center gap-2 mt-2">
+<span class="px-2.5 py-1 rounded bg-secondary text-on-secondary text-label-sm font-semibold tracking-wide shadow-xs">
+            Mention Très Bien
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-mono bg-surface-container text-primary font-semibold border border-primary/20">
+<span class="material-symbols-outlined text-xs" data-icon="check" style="font-size: 13px;">check</span>
+            Crédits ECTS validés (3 ECTS)
+          </span>
+</div>
+</div>
+<!-- Assessment grid breakdown -->
+<div class="md:col-span-7 space-y-2.5">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider font-semibold block mb-1">
+          Grille Critériée d'Évaluation
+        </span>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low border border-surface-container text-body-sm">
+<span class="font-medium text-on-surface">Rigueur formelle &amp; Démonstrations</span>
+<span class="font-mono font-bold text-primary px-2 py-0.5 bg-surface-container-lowest rounded border border-outline-variant/40">17 / 20</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low border border-surface-container text-body-sm">
+<span class="font-medium text-on-surface">Calculs &amp; Analyse dimensionnelle</span>
+<span class="font-mono font-bold text-secondary px-2 py-0.5 bg-surface-container-lowest rounded border border-outline-variant/40">14 / 20</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low border border-surface-container text-body-sm">
+<span class="font-medium text-on-surface">Interprétation physique &amp; Régimes</span>
+<span class="font-mono font-bold text-primary px-2 py-0.5 bg-surface-container-lowest rounded border border-outline-variant/40">16 / 20</span>
+</div>
+</div>
+</div>
+<!-- Formal critique synthesis by the Academic Mentor -->
+<div class="mt-space-sm p-3.5 rounded-lg bg-surface-container-low border border-outline-variant/70">
+<div class="flex items-start gap-2.5">
+<div class="w-7 h-7 rounded bg-primary text-on-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm" data-icon="psychology">psychology</span>
+</div>
+<div class="flex-1 text-body-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-wider font-bold">Synthèse de l'Examinateur Universitaire IA</span>
+<span class="text-label-sm font-mono text-outline">Avis Favorable aux Épreuves Écrites</span>
+</div>
+<p class="text-on-surface leading-relaxed">
+            « Démarche rigoureuse et très structurée sur la mise en équation du circuit RLC série. L'application du théorème de superposition et des lois des mailles est parfaitement maîtrisée. Néanmoins, une <strong class="text-error font-semibold">erreur de convention de signe</strong> persistante sur le fléchage récepteur de la bobine lors de l'établissement de la tension induite pénalise le calcul intermédiaire de l'amortissement. Veillez impérativement à expliciter l'orientation algébrique de l'axe et le fléchage de <span class="font-mono text-xs">i(t)</span> avant toute dérivation différentielle. »
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. DETAILED QUESTION-BY-QUESTION REPORT -->
+<div class="mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm pb-1 border-b border-outline-variant/50">
+<h2 class="text-title-md font-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="format_list_numbered">format_list_numbered</span>
+<span>Rapport d'Évaluation Détaillé par Exercice</span>
+</h2>
+<span class="text-label-sm font-label-sm text-outline font-mono">3 questions notées • Total /15 pts</span>
+</div>
+<div class="space-y-space-md">
+<!-- Question 1: Validé (+5/5) with brief formal confirmation -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-ambient-teal">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<span class="w-7 h-7 rounded bg-surface-container text-primary font-mono font-bold text-label-md flex items-center justify-center border border-outline-variant/60 flex-shrink-0">
+              Q1
+            </span>
+<div>
+<h3 class="text-title-md font-title-md text-on-surface">
+                Établissement de l'équation différentielle du filtre RLC série
+              </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                Régime transitoire sous échelon de tension unitaire E₀ • Loi des mailles en convention récepteur
+              </p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-semibold text-primary bg-surface-container px-3 py-1 rounded border border-primary/20 flex-shrink-0">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="check_circle">check_circle</span>
+<span>Validé (+5,0 / 5)</span>
+</span>
+</div>
+<div class="mt-3 pt-3 border-t border-surface-container-high">
+<div class="p-3 bg-surface-container-low rounded-lg border border-surface-container text-body-sm">
+<div class="flex items-center gap-1.5 font-semibold text-primary mb-1">
+<span class="material-symbols-outlined text-xs" data-icon="done_all">done_all</span>
+<span>Confirmation formelle du jury :</span>
+</div>
+<p class="text-on-surface">
+              Démonstration rigoureuse et complète. Les conditions initiales à <span class="font-mono text-xs">t = 0⁺</span> (<span class="font-mono text-xs">i(0⁺) = 0</span> et continuité de la charge <span class="font-mono text-xs">q(0⁺) = 0</span>) sont explicitement posées. L'identification des grandeurs canoniques (<span class="font-mono text-xs">ω₀ = 1/√(LC)</span> et <span class="font-mono text-xs">Q = (1/R)√(L/C)</span>) est exempte de faute.
+            </p>
+</div>
+</div>
+</div>
+<!-- Question 2: Erreur de convention de signe identifiée (+2,5/5) -->
+<div class="bg-surface-container-lowest rounded-xl border border-error/40 p-space-md shadow-ambient-teal relative">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<span class="w-7 h-7 rounded bg-error-container text-on-error-container font-mono font-bold text-label-md flex items-center justify-center border border-error/30 flex-shrink-0">
+              Q2
+            </span>
+<div>
+<h3 class="text-title-md font-title-md text-on-surface">
+                Expression de la tension aux bornes de l'inductance et calcul de la dérivée
+              </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                Continuité de la tension d'auto-induction <span class="font-mono text-xs">u_L(t)</span> et amortissement pseudo-périodique
+              </p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-semibold text-error bg-error-container/40 px-3 py-1 rounded border border-error/30 flex-shrink-0">
+<span class="material-symbols-outlined text-sm text-error" data-icon="warning">warning</span>
+<span>Erreur de convention (+2,5 / 5)</span>
+</span>
+</div>
+<!-- Comparative error block: Student vs Correct Formal Derivation -->
+<div class="mt-4 space-y-3">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<!-- Student formula -->
+<div class="p-3 rounded-lg bg-error-container/20 border border-error/30">
+<div class="flex items-center gap-1.5 text-label-sm font-bold text-error mb-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="close">close</span>
+<span>Rédaction de la copie étudiante (Formule erronée) :</span>
+</div>
+<div class="font-mono text-xs bg-surface-container-lowest p-2.5 rounded border border-error/20 text-on-surface overflow-x-auto">
+                u_L(t) = - L · (di / dt) = - L · I₀ · e^(-λt) · cos(ω t)
+              </div>
+<p class="text-[12px] text-error font-medium mt-1.5">
+                Signe négatif incorrect : confusion avec la force électromotrice induite e = -dΦ/dt au lieu de la tension récepteur.
+              </p>
+</div>
+<!-- Correct Formal Derivation -->
+<div class="p-3 rounded-lg bg-surface-container-low border border-primary/30">
+<div class="flex items-center gap-1.5 text-label-sm font-bold text-primary mb-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+<span>Dérivation formelle conforme (Standard Universitaire) :</span>
+</div>
+<div class="font-mono text-xs bg-surface-container-lowest p-2.5 rounded border border-primary/20 text-primary font-semibold overflow-x-auto">
+                u_L(t) = + L · (di / dt)  |  convention récepteur (i rentrant)
+              </div>
+<p class="text-[12px] text-on-surface-variant mt-1.5">
+                En convention récepteur, la tension aux bornes de la bobine idéale s'écrit positivement <span class="font-mono text-xs">u_L = L (di/dt)</span>.
+              </p>
+</div>
+</div>
+<!-- Academic Recommendation Footnote / Callout -->
+<div class="p-3 rounded-lg bg-surface-container border border-outline-variant/60 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-base flex-shrink-0 mt-0.5" data-icon="lightbulb">lightbulb</span>
+<div class="text-body-sm">
+<span class="text-label-sm font-bold text-secondary uppercase tracking-wider block">
+                Recommandation Méthodologique Universitaire (Partiels &amp; Concours) :
+              </span>
+<p class="text-on-surface mt-0.5 leading-normal text-[13px]">
+                « Ne confondez jamais la fem d'induction interne de Faraday (<span class="font-mono text-xs">e = -dΦ/dt</span>) avec la différence de potentiel mesurable aux bornes de la bobine (<span class="font-mono text-xs">u_L = -e = +L·di/dt</span>). Avant toute équation différentielle, tracez expressément la flèche tension à l'opposé de la flèche courant sur le schéma du dipôle inductif. »
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Question 3: Théorème de l'énergie et analyse asymptotique (+4/5) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-ambient-teal">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<span class="w-7 h-7 rounded bg-surface-container text-primary font-mono font-bold text-label-md flex items-center justify-center border border-outline-variant/60 flex-shrink-0">
+              Q3
+            </span>
+<div>
+<h3 class="text-title-md font-title-md text-on-surface">
+                Théorème de l'énergie et analyse asymptotique
+              </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                Bilan de puissance instantanée, dissipation par effet Joule &amp; convergence en régime permanent (<span class="font-mono text-xs">t → +∞</span>)
+              </p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm font-semibold text-secondary bg-surface-container px-3 py-1 rounded border border-secondary/30 flex-shrink-0">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="check_circle">check_circle</span>
+<span>Validé avec mention (+4,0 / 5)</span>
+</span>
+</div>
+<div class="mt-3 pt-3 border-t border-surface-container-high">
+<div class="p-3 bg-surface-container-low rounded-lg border border-surface-container text-body-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="font-semibold text-secondary">Évaluation du raisonnement énergétique :</span>
+<span class="text-label-sm font-mono text-outline">Bilan conforme : E_fournie = E_Joule + E_mag + E_elec</span>
+</div>
+<p class="text-on-surface">
+              Le bilan asymptotique est exact : la moitié de l'énergie fournie par le générateur est dissipée dans la résistance pure, l'autre moitié stockée dans le condensateur. <span class="text-on-surface-variant">Seule omission mineure : préciser l'intégrale temporelle de la puissance Joule entre 0 et l'infini pour consolider le calcul analytique.</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 6. ACTIONS: Academic Hierarchy -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-ambient-teal mb-space-2xl">
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container border border-outline-variant/60 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-xl" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<h4 class="text-label-lg font-label-lg text-on-surface">Approfondissement méthodologique</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Consultez l'enseignant IA pour une démonstration détaillée pas-à-pas.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch gap-2.5">
+<button class="h-11 px-4 rounded-lg bg-primary hover:bg-tertiary text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="forum">forum</span>
+<span>Poser une question d'approfondissement sur cette correction</span>
+</button>
+<button class="h-11 px-4 rounded-lg bg-surface-container-lowest border border-outline-variant text-primary hover:bg-surface-container-low font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="file_download">file_download</span>
+<span>Télécharger le relevé annoté en PDF (Rapport d'examen)</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- 7. BOTTOM NAVIGATION: Sober Academic Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-2 bg-surface-container-lowest border-t border-outline-variant/60 shadow-lg">
+<!-- Item 1: Accueil -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 transition-colors hover:text-primary active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">Accueil</span>
+</a>
+<!-- Item 2: Tuteur IA -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 transition-colors hover:text-primary active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="psychology">psychology</span>
+<span class="text-label-sm font-label-sm mt-0.5">Tuteur IA</span>
+</a>
+<!-- Item 3: Évaluation / Relevé (ACTIVE ITEM) -->
+<a class="flex flex-col items-center justify-center text-primary bg-surface-container px-3.5 py-1 rounded-lg transition-colors border border-primary/20" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="fact_check" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+<span class="text-label-sm font-label-sm mt-0.5 font-bold">Évaluation</span>
+</a>
+<!-- Item 4: Annales -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 transition-colors hover:text-primary active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="library_books">library_books</span>
+<span class="text-label-sm font-label-sm mt-0.5">Annales</span>
+</a>
+<!-- Item 5: Compte & Cursus -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 transition-colors hover:text-primary active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="badge">badge</span>
+<span class="text-label-sm font-label-sm mt-0.5">Cursus</span>
+</a>
+</nav>
+<!-- Minimal interactive scripts -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const actionButtons = document.querySelectorAll('button');
+    actionButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.add('opacity-80');
+        setTimeout(() => btn.classList.remove('opacity-80'), 150);
+      });
+    });
+  });
+</script>
+</body></html>

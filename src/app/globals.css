@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 25% 98%;
+    --foreground: 200 80% 10%;
+  }
+
+  body {
+    @apply bg-surface-canvas text-petrol font-inter antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-surface-base/90 backdrop-blur-md border border-border-subtle shadow-level-1;
+  }
+}
