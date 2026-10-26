@@ -16,8 +16,9 @@ import {
   X
 } from 'lucide-react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { signOut } from '@/app/actions/auth';
 
 const navItems = [
   { icon: LayoutDashboard, label: 'Accueil', href: '/dashboard' },
@@ -30,7 +31,9 @@ const navItems = [
 export const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isSigningOut, setIsSigningOut] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   // Close mobile sidebar on navigation
   useEffect(() => {
@@ -44,6 +47,17 @@ export const Sidebar = () => {
   };
 
   const toggleMobile = () => setIsMobileOpen(!isMobileOpen);
+
+  async function handleSignOut() {
+    setIsSigningOut(true);
+    try {
+      await signOut();
+    } finally {
+      router.replace('/auth/login');
+      router.refresh();
+      setIsSigningOut(false);
+    }
+  }
 
   useEffect(() => {
     document.documentElement.style.setProperty('--sidebar-width', '280px');
@@ -146,13 +160,14 @@ export const Sidebar = () => {
 
         {/* Footer Area / Logout */}
         <div className="p-4 border-t border-border-subtle/50">
-          <button className={cn(
+          <button disabled={isSigningOut} onClick={handleSignOut} className={cn(
             "flex items-center gap-4 w-full py-3.5 rounded-2xl text-red-500 hover:bg-red-50 transition-all duration-300",
+            isSigningOut && "cursor-wait opacity-60",
             isCollapsed ? "justify-center px-0" : "px-4"
           )}>
             <LogOut className="w-5 h-5 shrink-0" />
             {(!isCollapsed || isMobileOpen) && (
-              <span className="font-bold text-[11px] uppercase tracking-[0.15em]">Déconnexion</span>
+              <span className="font-bold text-[11px] uppercase tracking-[0.15em]">{isSigningOut ? 'Déconnexion…' : 'Déconnexion'}</span>
             )}
           </button>
 

@@ -10,34 +10,34 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#015F67",
-          dark: "#00464C",
-          container: "#015F67",
-          on: "#FFFFFF",
+          DEFAULT: "rgb(var(--color-primary) / <alpha-value>)",
+          dark: "rgb(var(--color-primary-dark) / <alpha-value>)",
+          container: "rgb(var(--color-primary) / <alpha-value>)",
+          on: "rgb(var(--color-on-primary) / <alpha-value>)",
         },
         secondary: {
-          DEFAULT: "#82447E",
-          container: "#FFB3F5",
-          on: "#FFFFFF",
+          DEFAULT: "rgb(var(--color-secondary) / <alpha-value>)",
+          container: "rgb(var(--color-secondary-container) / <alpha-value>)",
+          on: "rgb(var(--color-on-secondary) / <alpha-value>)",
         },
         tertiary: {
-          DEFAULT: "#074457",
-          container: "#285B6F",
+          DEFAULT: "rgb(var(--color-tertiary) / <alpha-value>)",
+          container: "rgb(var(--color-tertiary-container) / <alpha-value>)",
         },
         surface: {
-          base: "#FFFFFF",
-          canvas: "#F5F7F7",
-          dim: "#CFDCE2",
-          variant: "#D7E5EA",
+          base: "rgb(var(--color-surface-base) / <alpha-value>)",
+          canvas: "rgb(var(--color-surface-canvas) / <alpha-value>)",
+          dim: "rgb(var(--color-surface-dim) / <alpha-value>)",
+          variant: "rgb(var(--color-surface-variant) / <alpha-value>)",
         },
-        petrol: "#024154",
-        deepViolet: "#5E3473",
+        petrol: "rgb(var(--color-petrol) / <alpha-value>)",
+        deepViolet: "rgb(var(--color-deep-violet) / <alpha-value>)",
         border: {
-          subtle: "#D9E1E2",
+          subtle: "rgb(var(--color-border-subtle) / <alpha-value>)",
         }
       },
       backgroundImage: {
-        'signature-gradient': 'linear-gradient(135deg, #015F67 0%, #82447E 100%)',
+        'signature-gradient': 'linear-gradient(135deg, rgb(var(--color-gradient-start)) 0%, rgb(var(--color-gradient-end)) 100%)',
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

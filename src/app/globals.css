@@ -3,9 +3,57 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  :root,
+  [data-theme='light'] {
+    color-scheme: light;
     --background: 200 25% 98%;
     --foreground: 200 80% 10%;
+    --color-primary: 1 95 103;
+    --color-primary-dark: 0 70 76;
+    --color-primary-text: 1 95 103;
+    --color-on-primary: 255 255 255;
+    --color-secondary: 130 68 126;
+    --color-secondary-text: 130 68 126;
+    --color-secondary-container: 255 179 245;
+    --color-on-secondary: 255 255 255;
+    --color-tertiary: 7 68 87;
+    --color-tertiary-text: 7 68 87;
+    --color-tertiary-container: 40 91 111;
+    --color-gradient-start: 1 95 103;
+    --color-gradient-end: 130 68 126;
+    --color-surface-base: 255 255 255;
+    --color-surface-canvas: 245 247 247;
+    --color-surface-dim: 207 220 226;
+    --color-surface-variant: 215 229 234;
+    --color-petrol: 2 65 84;
+    --color-deep-violet: 94 52 115;
+    --color-border-subtle: 217 225 226;
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark;
+    --background: 165 15% 9%;
+    --foreground: 150 20% 94%;
+    --color-primary: 0 87 92;
+    --color-primary-dark: 0 64 69;
+    --color-primary-text: 112 211 194;
+    --color-on-primary: 10 35 32;
+    --color-secondary: 92 48 84;
+    --color-secondary-text: 222 168 214;
+    --color-secondary-container: 92 55 87;
+    --color-on-secondary: 34 20 32;
+    --color-tertiary: 29 84 99;
+    --color-tertiary-text: 137 205 221;
+    --color-tertiary-container: 35 74 82;
+    --color-gradient-start: 0 73 78;
+    --color-gradient-end: 82 43 76;
+    --color-surface-base: 29 48 43;
+    --color-surface-canvas: 13 23 21;
+    --color-surface-dim: 34 52 47;
+    --color-surface-variant: 39 61 54;
+    --color-petrol: 235 242 238;
+    --color-deep-violet: 189 144 202;
+    --color-border-subtle: 57 80 72;
   }
 
   body {
@@ -15,6 +63,80 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-poppins;
+  }
+
+  [data-theme='dark'] .text-primary {
+    color: rgb(var(--color-primary-text)) !important;
+  }
+
+  [data-theme='dark'] .text-secondary {
+    color: rgb(var(--color-secondary-text)) !important;
+  }
+
+  [data-theme='dark'] .text-tertiary {
+    color: rgb(var(--color-tertiary-text)) !important;
+  }
+
+  [data-theme='dark'] .text-emerald-600 {
+    color: #8ed9a6 !important;
+  }
+
+  [data-theme='dark'] .text-amber-600 {
+    color: #f2cb81 !important;
+  }
+
+  [data-theme='dark'] .text-red-500 {
+    color: #f29a9a !important;
+  }
+
+  [data-theme='dark'] [class~='text-petrol/20'],
+  [data-theme='dark'] [class~='text-petrol/30'],
+  [data-theme='dark'] [class~='text-petrol/40'] {
+    color: #a8b9b1 !important;
+  }
+
+  [data-theme='dark'] [class~='text-petrol/45'],
+  [data-theme='dark'] [class~='text-petrol/50'],
+  [data-theme='dark'] [class~='text-petrol/55'] {
+    color: #bdcbc4 !important;
+  }
+
+  [data-theme='dark'] [class~='text-petrol/60'],
+  [data-theme='dark'] [class~='text-petrol/65'],
+  [data-theme='dark'] [class~='text-petrol/70'] {
+    color: #d1dbd6 !important;
+  }
+
+  [data-theme='dark'] .dark-logo {
+    filter: brightness(1.65) saturate(0.9);
+  }
+
+  [data-theme='dark'] .bg-emerald-50 {
+    background-color: #20372b !important;
+  }
+
+  [data-theme='dark'] .border-emerald-100 {
+    border-color: #355641 !important;
+  }
+
+  [data-theme='dark'] .border-emerald-200 {
+    border-color: #476d53 !important;
+  }
+
+  [data-theme='dark'] .text-emerald-900 {
+    color: #c1e7ce !important;
+  }
+
+  [data-theme='dark'] .bg-amber-50 {
+    background-color: #3b3020 !important;
+  }
+
+  [data-theme='dark'] .border-amber-100 {
+    border-color: #5c472b !important;
+  }
+
+  [data-theme='dark'] .text-amber-900 {
+    color: #f2d5a6 !important;
   }
 }
 

@@ -1,89 +1,105 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Logo } from '@/components/ui/Logo';
-import { IslandButton } from '@/components/ui/IslandButton';
-import { DoubleBezelContainer } from '@/components/ui/DoubleBezelContainer';
-import { Mail, Lock, Chrome, ArrowRight, Github } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { ArrowRight, Chrome, LockKeyhole, Mail } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { signIn, signInWithGoogle } from '@/app/actions/auth';
+import { Logo } from '@/components/ui/Logo';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 export default function LoginPage() {
+  const router = useRouter();
+  const [notice, setNotice] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    const errorCode = new URLSearchParams(window.location.search).get('error');
+    if (errorCode === 'configuration') {
+      setNotice('Le service Supabase doit être configuré avant de vous connecter.');
+    } else if (errorCode === 'oauth') {
+      setNotice('La connexion Google a échoué. Réessayez ou connectez-vous par email.');
+    }
+  }, []);
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setNotice('');
+    setIsSubmitting(true);
+
+    try {
+      const result = await signIn(new FormData(event.currentTarget));
+      if (!result.ok) {
+        setNotice(result.error);
+        return;
+      }
+      router.replace('/dashboard');
+      router.refresh();
+    } catch {
+      setNotice('Connexion impossible pour le moment. Vérifiez votre réseau et réessayez.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  async function handleGoogleSignIn() {
+    setNotice('');
+    setIsSubmitting(true);
+
+    try {
+      const result = await signInWithGoogle();
+      if (!result.ok) {
+        setNotice(result.error);
+        return;
+      }
+      window.location.assign(result.url);
+    } catch {
+      setNotice('Connexion Google impossible pour le moment. Réessayez.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-surface-canvas flex items-center justify-center p-6">
-      {/* Background Orbs */}
-      <div className="fixed inset-0 pointer-events-none -z-10">
-        <div className="absolute top-[10%] left-[10%] w-[30%] h-[40%] bg-primary/5 blur-[100px] rounded-full animate-pulse" />
-        <div className="absolute bottom-[10%] right-[10%] w-[30%] h-[40%] bg-secondary/5 blur-[100px] rounded-full animate-pulse" />
+    <main className="flex min-h-screen items-center justify-center bg-surface-canvas px-4 py-10">
+      <div className="fixed right-4 top-4 z-10"><ThemeToggle /></div>
+      <div className="w-full max-w-md rounded-2xl border border-border-subtle bg-surface-base p-6 shadow-level-2 sm:p-9">
+        <div className="mb-8 flex justify-center"><Logo size="md" /></div>
+        <div className="mb-7">
+          <p className="text-xs font-bold uppercase text-secondary">Content de vous revoir</p>
+          <h1 className="mt-2 text-2xl font-bold text-petrol">Se connecter</h1>
+          <p className="mt-2 text-sm leading-6 text-petrol/60">Retrouvez vos séances, vos corrections et votre progression.</p>
+        </div>
+
+        <button type="button" disabled={isSubmitting} onClick={handleGoogleSignIn} className="flex min-h-12 w-full items-center justify-center gap-3 rounded-lg border border-border-subtle px-4 text-sm font-semibold text-petrol transition hover:bg-surface-canvas disabled:cursor-wait disabled:opacity-60">
+          <Chrome className="h-4 w-4" /> Continuer avec Google
+        </button>
+
+        <div className="my-6 flex items-center gap-3 text-xs text-petrol/45"><span className="h-px flex-1 bg-border-subtle" />ou avec votre email<span className="h-px flex-1 bg-border-subtle" /></div>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <label className="block text-xs font-semibold text-petrol">
+            Adresse email
+            <span className="relative mt-2 block">
+              <Mail className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-petrol/40" />
+              <input required name="email" type="email" autoComplete="email" placeholder="nom@exemple.com" className="h-12 w-full rounded-lg border border-border-subtle bg-surface-base pl-10 pr-3 text-sm font-normal outline-none transition placeholder:text-petrol/35 focus:border-primary focus:ring-2 focus:ring-primary/15" />
+            </span>
+          </label>
+          <label className="block text-xs font-semibold text-petrol">
+            <span className="flex items-center justify-between">Mot de passe<Link href="/auth/signup" className="font-medium text-primary hover:underline">Créer un compte</Link></span>
+            <span className="relative mt-2 block">
+              <LockKeyhole className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-petrol/40" />
+              <input required name="password" type="password" autoComplete="current-password" placeholder="Votre mot de passe" className="h-12 w-full rounded-lg border border-border-subtle bg-surface-base pl-10 pr-3 text-sm font-normal outline-none transition placeholder:text-petrol/35 focus:border-primary focus:ring-2 focus:ring-primary/15" />
+            </span>
+          </label>
+          <button type="submit" disabled={isSubmitting} className="flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-primary px-4 text-sm font-bold text-white transition hover:bg-primary-dark disabled:cursor-wait disabled:opacity-60">
+            {isSubmitting ? 'Connexion…' : 'Se connecter'} <ArrowRight className="h-4 w-4" />
+          </button>
+        </form>
+
+        {notice && <p role="status" className="mt-4 rounded-lg bg-secondary/10 px-3 py-2.5 text-xs leading-5 text-secondary">{notice}</p>}
+        <Link href="/landing" className="mt-6 block text-center text-xs font-medium text-petrol/45 hover:text-primary">Retour à l’accueil</Link>
       </div>
-
-      <motion.div
-        initial={{ scale: 0.95, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="w-full max-w-md"
-      >
-        <DoubleBezelContainer className="p-10 space-y-8">
-          <div className="text-center space-y-2">
-            <Logo size="sm" showText={false} className="mx-auto" />
-            <h1 className="text-2xl font-bold tracking-tight text-petrol mt-4">Bon retour parmi nous</h1>
-            <p className="text-xs font-bold text-petrol/40 uppercase tracking-widest">Connectez-vous à votre mentor IA</p>
-          </div>
-
-          {/* Social Auth (Mocked) */}
-          <div className="grid grid-cols-1 gap-3">
-            <IslandButton variant="outline" className="w-full justify-center gap-4 py-3.5 border-border-subtle hover:bg-surface-canvas" icon={Chrome}>
-              Continuer avec Google
-            </IslandButton>
-          </div>
-
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center"><span className="w-full border-t border-border-subtle" /></div>
-            <div className="relative flex justify-center text-[10px] uppercase font-bold tracking-widest">
-              <span className="bg-surface-base px-3 text-petrol/30">Ou avec votre email</span>
-            </div>
-          </div>
-
-          {/* Form */}
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <label className="text-[10px] font-bold uppercase tracking-widest text-petrol/60 ml-1">Email</label>
-              <div className="relative">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-petrol/30" />
-                <input
-                  type="email"
-                  placeholder="nom@exemple.com"
-                  className="w-full h-14 pl-12 pr-6 rounded-2xl bg-surface-canvas border-none focus:ring-2 focus:ring-primary/20 transition-all text-sm font-medium"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex justify-between px-1">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-petrol/60">Mot de passe</label>
-                <button className="text-[10px] font-bold uppercase tracking-widest text-primary hover:underline">Oublié ?</button>
-              </div>
-              <div className="relative">
-                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-petrol/30" />
-                <input
-                  type="password"
-                  placeholder="••••••••"
-                  className="w-full h-14 pl-12 pr-6 rounded-2xl bg-surface-canvas border-none focus:ring-2 focus:ring-primary/20 transition-all text-sm font-medium"
-                />
-              </div>
-            </div>
-          </div>
-
-          <IslandButton variant="primary" className="w-full justify-center h-14 shadow-level-2" icon={ArrowRight}>
-            Se connecter
-          </IslandButton>
-
-          <p className="text-center text-xs font-medium text-petrol/60">
-            Nouveau sur EDUMENTORYA ?{' '}
-            <Link href="/auth/signup" className="text-primary font-bold hover:underline">Créer un compte</Link>
-          </p>
-        </DoubleBezelContainer>
-      </motion.div>
-    </div>
+    </main>
   );
 }

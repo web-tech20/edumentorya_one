@@ -90,7 +90,7 @@ export default function ArchivesPage() {
           <p className="text-sm md:text-lg text-white/80 max-w-xl mx-auto font-medium leading-relaxed">
             Accédez à toutes les annales en illimité pour seulement 1 000 FCFA / mois.
           </p>
-          <IslandButton variant="outline" className="bg-white border-none text-primary mx-auto" icon={Zap}>
+          <IslandButton variant="outline" className="bg-white border-none text-primary-dark mx-auto" icon={Zap}>
             Passer Premium
           </IslandButton>
         </DoubleBezelContainer>

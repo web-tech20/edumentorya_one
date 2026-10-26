@@ -22,14 +22,15 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <div className={cn("flex items-center gap-3", className)}>
       <div className={cn(
-        "relative overflow-hidden rounded-xl border border-border-subtle shadow-level-1",
+        "relative shrink-0",
         size === 'sm' ? "w-8 h-8" : size === 'md' ? "w-12 h-12" : "w-16 h-16"
       )}>
         <Image
-          src="/assets/logo.jpg"
+          src="/assets/logo.svg"
           alt="EDUMENTORYA Logo"
           fill
-          className="object-cover"
+          priority
+          className="dark-logo object-contain"
         />
       </div>
       {showText && (

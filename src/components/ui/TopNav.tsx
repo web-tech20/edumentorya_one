@@ -5,6 +5,7 @@ import { Logo } from './Logo';
 import { Bell, UserCircle, Search } from 'lucide-react';
 import { DoubleBezelContainer } from './DoubleBezelContainer';
 import { usePathname } from 'next/navigation';
+import { ThemeToggle } from './ThemeToggle';
 
 export const TopNav = () => {
   const pathname = usePathname();
@@ -16,7 +17,7 @@ export const TopNav = () => {
     <header className="fixed top-0 left-0 w-full z-40 px-4 md:px-6 py-3 md:py-4 bg-surface-canvas/80 backdrop-blur-md md:bg-transparent">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo visible only on mobile */}
-        <div className="md:hidden">
+        <div className="ml-12 md:hidden">
           <Logo size="sm" showText={false} />
         </div>
 
@@ -26,12 +27,13 @@ export const TopNav = () => {
             <input
               type="text"
               placeholder="Rechercher une ressource..."
-              className="h-10 pl-11 pr-6 rounded-full bg-surface-base/50 backdrop-blur-md border border-border-subtle focus:bg-white focus:ring-2 focus:ring-primary/10 transition-all text-xs font-medium w-64 shadow-sm"
+              className="h-10 pl-11 pr-6 rounded-full bg-surface-base/50 backdrop-blur-md border border-border-subtle focus:bg-surface-base focus:ring-2 focus:ring-primary/10 transition-all text-xs font-medium w-64 shadow-sm"
             />
           </div>
 
           <div className="flex items-center gap-2">
-            <button className="w-9 h-9 md:w-10 md:h-10 rounded-full glass-panel flex items-center justify-center text-petrol hover:text-primary transition-colors">
+            <ThemeToggle />
+            <button aria-label="Notifications" className="w-9 h-9 md:w-10 md:h-10 rounded-full glass-panel flex items-center justify-center text-petrol hover:text-primary transition-colors">
               <Bell className="w-4 h-4 md:w-5 md:h-5" />
             </button>
 
