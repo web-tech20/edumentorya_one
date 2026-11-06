@@ -85,11 +85,13 @@ export async function signUp(formData: FormData): Promise<AuthActionResult> {
     });
 
     if (error) {
+      console.error("SIGNUP SUPABASE ERROR:", error.message, error.status);
       return { ok: false, error: 'Création du compte impossible. Vérifiez les informations saisies.' };
     }
 
     return { ok: true, needsEmailConfirmation: !data.session };
-  } catch {
+  } catch (error) {
+    console.error("SIGNUP ERROR:", error);
     return { ok: false, error: 'Création du compte impossible. Vérifiez la configuration Supabase.' };
   }
 }
